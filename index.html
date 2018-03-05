@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+		<title>Beautiful Experiences</title>
+		<link rel="shortcut icon" type="image/png" href="img/favicon.png"/>
+		<link rel="stylesheet" type="text/css" href="css/normalize.css"/>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+		<link rel="stylesheet" type="text/css" href="css/lity.css"/>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="js/lity.js"></script>
+	</head>
+	<body>
+		<div id="loader">
+			<span id="loader-progress">0%</span>
+		</div>
+		<div id="overlay">
+			<section id="nav">
+				<span class="title" onclick="goToSection('home')">Beautiful Experiences</span>
+				<span class="menu-about cool-link" onclick="goToSection('about')">About</span>
+			</section>	
+
+			<section id="about">
+				<div id="about-section-content" class="col-lg-6 col-md-8 col-sm-12">
+					Beautiful Experiences is a curation of awesome <span class="color-blanchealmond">interactive experiences</span> crafted by <span class="color-blanchealmond">creative developers</span> and <span class="color-blanchealmond">designers</span>.
+					<br><br>
+					It highlights some of the works of creatives pushing boundaries in the fields of <span class="color-blanchealmond">virtual and augmented reality</span>, <span class="color-blanchealmond">game design</span>, <span class="color-blanchealmond">web design and development</span>, with a huge chunk focused on projects leveraging <span class="color-blanchealmond">webgl</span> technology.
+					<br><br>
+					The projects listed on this site are part of this <a href="https://github.com/thekolapo/beautiful-web-mobile-experiences" target="_blank"><span class="color-lightcoral cool-link">github list</span></a>. You can also find more of these beautiful experiences on <a href="https://twitter.com/btflexperiences" target="_blank"><span class="color-lightcoral cool-link">twitter</span></a>.
+					<br><br>
+					<span class="color-blanchealmond">Stay inspired and woke</span>.
+					<br><br><br>
+					A wee project by <a href="https://twitter.com/kolapo_" target="_blank"><span class="color-lightcoral cool-link">Kolapo Oni</span></a>.
+				</div>
+			</section>
+
+			<section id="project-section">
+				<div id="project-title">Emmit Fenn by Active Theory</div>
+				<div id="project-view"><a id="video-link" class="cool-link" href=""  onclick="toggleAudio(turnoff = true)" data-lity>watch video</a> <span id="divider"> | </span> <a id="website-link" class="cool-link" href="" target="_blank">launch website</a></div>
+			</section>
+
+			<section class="footer">
+				<div id="audio-bars" onclick="toggleAudio()">
+					<ul>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+					</ul>
+				</div>
+				<div class="counter"><span id="counter-num">01</span> &#8212; <span class="total-count">10</span></div>
+			</section>
+
+		</div>
+		<section id="canvas"></section>
+		<main class="site-wrapper">
+			<div class="content content--fixed"></div>
+			<div class="content">
+				<div class="slide-wrapper">
+					<div class="slide-item">
+						<img src="img/1.jpg" class="slide-item__image">
+					</div>
+					<div class="slide-item">
+						<img src="img/2.jpg" class="slide-item__image">
+					</div>
+					<div class="slide-item">
+						<img src="img/3.png" class="slide-item__image">
+					</div>	
+					<div class="slide-item">
+						<img src="img/4.png" class="slide-item__image">
+					</div>	
+					<div class="slide-item">
+						<img src="img/10.png" class="slide-item__image">
+					</div>
+					<div class="slide-item">
+						<img src="img/11.png" class="slide-item__image">
+					</div>
+					<div class="slide-item">
+						<img src="img/5.png" class="slide-item__image">
+					</div>	
+					<div class="slide-item">
+						<img src="img/6.jpg" class="slide-item__image">
+					</div>
+					<div class="slide-item">
+						<img src="img/7.jpg" class="slide-item__image">
+					</div>	
+					<div class="slide-item">
+						<img src="img/8.jpg" class="slide-item__image">
+					</div>					
+				</div>
+			</div>
+		</main>
+		<script src="js/pixi.min.js"></script>
+		<script src="js/TweenMax.min.js"></script>
+		<script src="js/imagesloaded.pkgd.min.js"></script>
+		<script src="js/sound.js"></script>
+		<script src="js/main.js"></script>
+	</body>
+</html>
