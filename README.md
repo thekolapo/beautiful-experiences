@@ -1,1 +1,2 @@
-A curation of beautiful experiences by creative developers and designers.
+## Beautiful Experiences
+A curation of beautiful experiences crafted by creative developers and designers.
