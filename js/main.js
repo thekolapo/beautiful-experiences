@@ -418,10 +418,7 @@ window.CanvasSlideshow = function( options ) {
 
   }
 
-  //Touch start
-  var ts;
-
-  $(document.body).on("touchstart", function(event) {
+  function playAudio() {
     if(audioHasLoaded && progress == 100){
       document.getElementById('loader').style.width = '0%';
       document.getElementById('loader-progress').style.display = 'none';
@@ -431,8 +428,18 @@ window.CanvasSlideshow = function( options ) {
       }
       progress = 0;
     }
-  
+  }
+
+  //Touch start
+  var ts;
+
+  $(document.body).on("touchstart", function(event) {
+    playAudio();
     ts = event.originalEvent.touches[0].clientY;
+  });
+
+  $(document.body).mouseup(function() {
+    playAudio();
   });
 
   $(document.body).on("touchmove", function(event) {
@@ -526,9 +533,9 @@ sounds.whenLoaded = function setup (){
   bgMusic.loop = true;
   bgMusic.volume = 0.7;
 
-  if(!(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))) {
-    bgMusic.play();
-  }
+  // if(!(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))) {
+  //   bgMusic.play();
+  // }
   
   musicIsPlaying = true;
   audioHasLoaded = true;
@@ -543,19 +550,24 @@ $('body').imagesLoaded()
 		progress += 10;
     loaderProgress.innerHTML = progress + '%';
     if(progress == 100){
-      if( /Android|webOS|iPhone|iPod|iPad|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+      // if( /Android|webOS|iPhone|iPod|iPad|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
         // setTimeout(() => loaderProgress.innerHTML = 'Tap the screen', 1000);
         setTimeout(() =>  TweenMax.to( loaderProgress, 0.8, {alpha:0, onComplete: function() {
-          loaderProgress.style.fontSize = '30px';
+          loaderProgress.style.fontSize = '40px';
+
+          if( /Android|webOS|iPhone|iPod|iPad|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+            loaderProgress.style.fontSize = '30px';
+          }
+          
           loaderProgress.innerHTML = 'Tap the screen';
           TweenMax.to( loaderProgress, 4, {alpha:1});
-         } }), 1000);
+        } }), 1000);
         
-      }
-      else{
-        setTimeout(() => loader.style.width = '0%', 1000);
-        setTimeout(() => loaderProgress.style.display = 'none', 1000);
-      }
+      // }
+      // else{
+      //   setTimeout(() => loader.style.width = '0%', 1000);
+      //   setTimeout(() => loaderProgress.style.display = 'none', 1000);
+      // }
     }
   });
       
