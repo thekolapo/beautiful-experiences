@@ -350,7 +350,7 @@ window.CanvasSlideshow = function( options ) {
       that.moveSlider( that.currentIndex + 1 );
       
     }
-    else if(e.wheelDelta > 40){
+    else if(e.wheelDeltaY > 40){
       if(that.currentIndex == 0){
         that.moveSlider(slideImages.length - 1);
         return;
